@@ -1,0 +1,137 @@
+package Function;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class TextGame {
+	
+	public static void main(String[] args) {
+		
+		player1();
+	}
+	
+	public static void player1() {
+	int count = 0;
+	int i1 = 0;
+	int i2 = 0;
+	while(count<5) {
+	//player 1
+	System.out.println("chose your opction {\"stone\",\"paper\",\"scissor\"}");
+	System.out.println("######################################################");
+
+	Scanner sc = new Scanner(System.in);
+	String player1 = sc.nextLine();
+	//computer program
+	String arr[] = {"stone","paper","scissor"}; 
+	Random random = new Random();
+	int computer = random.nextInt(3);
+	
+	System.out.println("----------------------------------------------------");
+	System.out.println("computer = "+arr[computer]);
+	System.out.println("player1 = "+player1);
+	System.out.println("----------------------------------------------------");
+	
+	if(player1.equals(arr[computer])) {
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("	tie");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
+	}
+	//1
+	if(player1.equals("paper")) {
+		if(computer == 0) {
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("	player1 win");
+			System.out.println("----------------------------------------------------");
+			i1++;
+			System.out.println();
+		}
+	}
+	if(player1.equals("stone")) {
+		if(computer == 1) {
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("	computer win");
+			System.out.println("----------------------------------------------------");
+			i2++;
+			System.out.println();
+		}
+	}
+	//2
+	if(player1.equals("stone")) {
+		if(computer == 2) {
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("	player1 win");
+			System.out.println("----------------------------------------------------");
+			i1++;
+			System.out.println();
+		}
+	}
+	if(player1.equals("scissor")) {
+		if(computer == 0) {
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("	computer win");
+			System.out.println("----------------------------------------------------");
+			i2++;
+			System.out.println();
+		}
+	}
+	//3
+	if(player1.equals("scissor")) {
+		if(computer == 1) {
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("			player1 win");
+			System.out.println("----------------------------------------------------");
+			i1++;
+			System.out.println();
+		}
+	}
+	if(player1.equals("paper")) {
+		if(computer == 2) {
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("	computer win");
+			System.out.println("----------------------------------------------------");
+			i2++;
+			System.out.println();
+		}
+	}
+	else {
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("	please enter valid string input ");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
+	}
+	count++;
+	}
+	
+	
+	if(i1>i2) {
+		System.out.println("######################################################");
+		System.out.println("total player1 wins = "+i1+" so player1 is a winner");
+		System.out.println("######################################################");
+
+	}
+	else if(i1<i2){
+		System.out.println("######################################################");
+		System.out.println("total computer wins = "+i2+" so computer is a winner");
+		System.out.println("######################################################");
+
+	}
+	else {
+		System.out.println("######################################################");
+		System.out.println("      Match Tie");
+		System.out.println("## congratulations of both team ##");
+		System.out.println("######################################################");
+
+	}
+
+ }
+	
+}
